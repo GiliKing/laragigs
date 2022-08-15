@@ -14,6 +14,7 @@
         alt=""
     />
     <div>
+        
         <h3 class="text-2xl">
             <a href="/li/{{$listing->id}}">{{$listing->title}}</a>
         </h3>
