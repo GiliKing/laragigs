@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
 
@@ -18,6 +19,7 @@ use App\Http\Controllers\ListingController;
 
 // All listings
 Route::get('/', [ListingController::class, 'index']);
+
 
 // show create Form
 Route::get('/li/create', [ListingController::class, 'create'])->middleware('auth');
@@ -67,3 +69,8 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 
+Route::get('/foo', function () {
+
+    Artisan::call('storage:link');
+    
+});
