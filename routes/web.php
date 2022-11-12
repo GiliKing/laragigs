@@ -67,10 +67,3 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 // login in user
 
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
-
-
-Route::get('/foo', function () {
-
-    Artisan::call('storage:link');
-    
-});
