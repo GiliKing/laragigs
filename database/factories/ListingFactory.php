@@ -9,13 +9,17 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ListingFactory extends Factory
 {
+
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
+
+    
     public function definition()
-    {
+    {   
+
         return [
             'title' => fake()->sentence(),
             'tags' => 'laravel, api, backend',

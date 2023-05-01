@@ -36,6 +36,7 @@ class UserController extends Controller
 
     // Logout user
     public function logout(Request $request) {
+        
         auth()->logout();
 
         $request->session()->invalidate();
