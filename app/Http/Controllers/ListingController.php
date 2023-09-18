@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
+ 
+Storage::disk('local')->put('example.txt', 'Contents');
 
 class ListingController extends Controller
 {
     // show all listing
     public function index() {
+
+        // dd(Listing::latest()->simplepaginate(6));
         // dd(request()->tag);
         return view('listings.index', [
             'listings' => Listing::latest()->filter(request(['tag', 'search']))->simplepaginate(6)
@@ -43,6 +48,7 @@ class ListingController extends Controller
 
         if($request->file('logo')) {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+            Storage::disk('local')->put('logos', 'public');
         }
 
         $formFields['user_id'] = auth()->id();

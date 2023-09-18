@@ -37,7 +37,7 @@
                     >
 
                     <a
-                        href="{{$listing->website}}"
+                        href="https://{{$listing->website}}"
                         target="_blank"
                         class="block bg-black text-white py-2 rounded-xl hover:opacity-80"
                         ><i class="fa-solid fa-globe"></i> Visit
