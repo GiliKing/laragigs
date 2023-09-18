@@ -18,3 +18,6 @@ php artisan route:cache
 
 echo "Running migrations..."
 php artisan migrate --force
+
+echo "Creat larave storage symlink"
+php artisan storage:link
