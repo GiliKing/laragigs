@@ -17,7 +17,7 @@ echo "Caching routes..."
 php artisan route:cache
 
 echo "Running migrations..."
-php artisan migrate --force
+php artisan migrate:fresh --force
 
-echo "Creat larave storage symlink"
+echo "Creat laravel storage symlink"
 php artisan storage:link
